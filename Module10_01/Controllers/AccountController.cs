@@ -151,7 +151,8 @@ namespace Module10_01.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                //補City = model.City
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, City = model.City };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
